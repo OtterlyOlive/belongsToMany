@@ -72,8 +72,6 @@ class TagsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['secondary_id'], 'Secondaries'));
-
         return $rules;
     }
 }
