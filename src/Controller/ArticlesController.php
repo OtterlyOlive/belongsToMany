@@ -18,7 +18,7 @@ class ArticlesController extends AppController
      */
     public function index()
     {
-        $articles = $this->Article->find()->contain(['Tags'])->toArray();
+        $articles = $this->Articles->find()->contain(['Tags'])->toArray();
         debug($articles); die;
 
         $this->set(compact('articles'));
