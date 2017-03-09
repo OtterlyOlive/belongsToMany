@@ -25,6 +25,26 @@ class ArticlesController extends AppController
         $this->set('_serialize', ['articles']);
     }
 
+    public function forceSave()
+    {
+	    $article = $this->Articles->newEntity([
+	    	'title' => 'Totally rad article!',
+		    'content' => 'Totally rad content!',
+		    'tags' => [
+		    	[
+		    		'secondary_id' => '740147b3-e756-4f12-a25b-fda5e8756ddb',
+				    '_joinData' => [
+					    'weight' => 'Heavy weight',
+				    ]
+			    ]
+		    ]
+	    ]);
+
+	    $this->Articles->save($article);
+
+	    debug($article); die;
+    }
+
     /**
      * View method
      *
